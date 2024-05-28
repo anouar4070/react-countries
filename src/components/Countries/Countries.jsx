@@ -32,11 +32,22 @@ const Countries = () => {
     } catch (error) {
       console.error({ message: "error", error });
     }
+
   };
+
+  const handleReset = () => {
+    if (searchInput.current) {
+      searchInput.current.value = "";
+      getAllCountries();
+    }
+};
 
   useEffect(() => {
     getAllCountries();
   }, []);
+
+ 
+  
 
   return (
     <>
@@ -45,19 +56,24 @@ const Countries = () => {
           <h1>List of Countries</h1>
         </div>
         <div className="col-md-4 text-right">
+
           <form className="d-flex" onSubmit={SearchCountries}>
+           
             <input
               ref={searchInput}
               className="form-control me-sm-2"
               type="search"
               placeholder="Search"
             />
+            
             <button className="btn btn-secondary my-2 my-sm-0" type="submit">
               Search
             </button>
-            <button className="btn btn-danger my-2 my-sm-0" type="button">
+            
+            <button className="btn btn-danger my-2 my-sm-0" type="button"  onClick={handleReset}>
               Reset
             </button>
+
           </form>
         </div>
       </div>
