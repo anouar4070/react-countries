@@ -100,9 +100,11 @@ const Countries = () => {
                 <img
                   className="card-img-top"
                   src={country.flags.png}
+                  style={{ height: "200px" }}
+                  display="block"
                   alt="Title"
                 />
-                <div className="card-body">
+                <div className="card-body" style={{ height: "150px" }}>
                   <h4 className="card-title">{country.name.official} </h4>
                   <p className="card-text">Region: {country.region} </p>
                   <p className="card-text">Capital: {country.capital}</p>
