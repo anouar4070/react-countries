@@ -1,15 +1,19 @@
 
 import './App.css';
 import Countries from './components/Countries/Countries';
+import CounterContextProvider from "./Context/CounterContext.js";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+    <CounterContextProvider>
+
     <Countries />
        
-        
-      </header>
+    </CounterContextProvider>
+    
+    
+    
     </div>
   );
 }
